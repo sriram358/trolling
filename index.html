@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submission Successful</title>
+    <style>
+        #player {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Your design has been submitted successfully</h1>
     <div id="player"></div>
-    <button id="playButton">Play Video</button>
 
     <script>
         // Load the IFrame Player API code asynchronously.
@@ -29,10 +33,14 @@
             });
         }
 
-        // Play the video when the button is clicked.
-        document.getElementById('playButton').addEventListener('click', function() {
-            player.playVideo();
-        });
+        // Show the video and play it when the user moves the cursor.
+        document.body.addEventListener('mousemove', function() {
+            var playerDiv = document.getElementById('player');
+            if (playerDiv.style.display === 'none') {
+                playerDiv.style.display = 'block';
+                player.playVideo();
+            }
+        }, { once: true }); // Ensure the event listener is only triggered once
     </script>
 </body>
 
