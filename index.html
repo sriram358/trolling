@@ -6,41 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submission Successful</title>
     <style>
-        #player {
+        #video {
             display: none;
         }
     </style>
 </head>
 
 <body>
-    <h1>Your design has been submitted successfully</h1>
-    <div id="player"></div>
+    <h1>Your design has been submitted successfully!</h1>
+    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0"
+        allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
     <script>
-        // Load the IFrame Player API code asynchronously.
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        // Create an <iframe> (and YouTube player) after the API code downloads.
-        var player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                height: '315',
-                width: '560',
-                videoId: 'dQw4w9WgXcQ',
-            });
-        }
-
-        // Show the video and play it when the user moves the cursor.
-        document.body.addEventListener('mousemove', function() {
-            var playerDiv = document.getElementById('player');
-            if (playerDiv.style.display === 'none') {
-                playerDiv.style.display = 'block';
-                player.playVideo();
-            }
-        }, { once: true }); // Ensure the event listener is only triggered once
+        document.body.addEventListener('mousemove', function () {
+            document.getElementById('video').style.display = 'block';
+        });
     </script>
 </body>
 
