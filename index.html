@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submission Successful</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
         #video {
             display: none;
         }
@@ -13,9 +27,11 @@
 </head>
 
 <body>
-    <h1>Your design has been submitted successfully!</h1>
-    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0"
-        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div>
+        <h1>Your design has been submitted successfully!</h1>
+        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
 
     <script>
         document.body.addEventListener('click', function () {
