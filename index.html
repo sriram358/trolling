@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,20 +23,53 @@
         #video {
             display: none;
         }
+
+        #cookieConsent {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #cookieConsent button {
+            background-color: #f1d600;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
     <div>
         <h1>Your design has been submitted successfully!</h1>
-        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0"
-            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <div id="cookieConsent">
+        This website uses cookies to ensure you get the best experience. <button onclick="acceptCookies()">Got it!</button>
     </div>
 
     <script>
-        document.body.addEventListener('click', function () {
+        function acceptCookies() {
+            document.getElementById('cookieConsent').style.display = 'none';
+            document.cookie = "acceptedCookies=true; max-age=" + 60 * 60 * 24 * 30;
             document.getElementById('video').style.display = 'block';
-        });
+        }
+
+        window.onload = function () {
+            if (!document.cookie.split('; ').find(row => row.startsWith('acceptedCookies'))) {
+                document.getElementById('cookieConsent').style.display = 'block';
+            } else {
+                document.getElementById('video').style.display = 'block';
+            }
+        }
     </script>
 </body>
 
