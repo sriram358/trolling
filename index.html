@@ -29,7 +29,6 @@
         }
 
         #cookieConsent {
-            display: none;
             position: fixed;
             bottom: 0;
             left: 0;
@@ -64,18 +63,8 @@
     <script>
         function acceptCookies() {
             document.getElementById('cookieConsent').style.display = 'none';
-            document.cookie = "acceptedCookies=true; max-age=" + 1;
             document.getElementById('videoCover').style.display = 'none';
             document.getElementById('video').src += "?autoplay=1";
-        }
-
-        window.onload = function () {
-            if (!document.cookie.split('; ').find(row => row.startsWith('acceptedCookies'))) {
-                document.getElementById('cookieConsent').style.display = 'block';
-            } else {
-                document.getElementById('videoCover').style.display = 'none';
-                document.getElementById('video').src += "?autoplay=1";
-            }
         }
     </script>
 </body>
