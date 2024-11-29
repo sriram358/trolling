@@ -59,7 +59,7 @@
 
 <body>
     <div>
-        <h1>Thank you for your design! If you're lucky you will get free merch :D</h1>
+        <h1 id="funny">Thank you for your design! If you're lucky you will get free merch :D</h1>
         <div id="videoCover"></div>
         <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
             allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -75,6 +75,7 @@
             document.getElementById('cookieConsent').style.display = 'none';
             document.getElementById('videoCover').style.display = 'none';
             document.getElementById('video').src += "?autoplay=1";
+            document.getElementById('funny').innerHTML = "Your response has been submitted successfully! :D";
         }
     </script>
 </body>
